@@ -7,3 +7,6 @@ This sample project is following the guide from the [tutorial series](https://sy
 ##### Install required dependencies
 `npm install keycloak-js@latest --save` <br>
 Note that the keycloak-js module comes with typed defination, it can directly use in Typescript project. 
+
+## Bonus
+Check out this package, [keycloak-angular](https://www.npmjs.com/package/keycloak-angular), which provides Easy Keycloak setup for Angular applications.
