@@ -2,7 +2,7 @@
 Simple Angular application uses [Keycloak](https://www.keycloak.org/index.html) for authentication
 
 ## Get started
-This sample project is following the guide from the [tutorial series](https://symbiotics.co.za/integrating-keycloak-with-an-angular-4-web-application-part-5/)
+This sample project is following the guide from the [tutorial series](https://symbiotics.co.za/integrating-keycloak-with-an-angular-4-web-application-part-5/), please read all the parts (five in total)
 
 ##### Install required dependencies
 `npm install keycloak-js@latest --save` <br>
