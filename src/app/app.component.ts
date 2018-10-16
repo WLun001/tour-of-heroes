@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {KeycloakService} from './keycloak/keycloak.service';
 
 @Component({
   selector: 'app-root',
@@ -15,5 +16,9 @@ export class AppComponent {
 
   increment() {
     this.counterValue++;
+  }
+
+  logout() {
+    KeycloakService.logout();
   }
 }

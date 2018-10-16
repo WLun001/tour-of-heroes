@@ -6,8 +6,10 @@ import {environment} from '../../environments/environment';
   providedIn: 'root'
 })
 export class KeycloakService {
-  static auth: any = {};
 
+  static auth: any = {};
+  static readonly REALMS = 'tester';
+  static readonly CLIENT_ID = '123';
   constructor() {
   }
 
@@ -15,8 +17,8 @@ export class KeycloakService {
   static init(): Promise<any> {
     const keycloakAuth = Keycloak({
       url: environment.keycloakRootUrl,
-      realm: 'tester',
-      clientId: '123',
+      realm: this.REALMS,
+      clientId: this.CLIENT_ID,
       'ssl-required': 'external',
       'public-client': true
     });
@@ -29,7 +31,7 @@ export class KeycloakService {
         this.auth.loggedIn = true;
         this.auth.authz = keycloakAuth;
         this.auth.logoutUrl = keycloakAuth.authServerUrl
-          + 'realms/tester/protocol/openid-connect/logout?redirect_uri=' +
+          + `/realms/${this.REALMS}/protocol/openid-connect/logout?redirect_uri=` +
           document.baseURI;
         resolve();
       }).error(() => {
