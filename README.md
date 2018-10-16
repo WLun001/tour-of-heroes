@@ -10,6 +10,9 @@ This sample project is following the guide from the [tutorial series](https://sy
 Cannot read property 'config' of null
 TypeError: Cannot read property 'config' of null
 ```
+it is caused by Angular cli couldn't find `angular.cli.json`<br>
+###### Solution
+`mv _angular-cli.json angular-cli.json` and run again
 
 ##### Install required dependencies
 `npm install keycloak-js@latest --save` <br>
@@ -19,10 +22,6 @@ Note that the keycloak-js module comes with typed defination, it can directly us
 1. start Keycloak server, go to where the Keycloak is saved `/bin/standalone.sh`, more info from [Keycloak guide](https://www.keycloak.org/docs/latest/getting_started/index.html)
 2. Add new Realm and users, more info on [part two](https://symbiotics.co.za/integrating-keycloak-with-an-angular-4-web-application-part-2/)
 3. `npm install` and `npm run`
-
-it is caused by Angular cli couldn't find `angular.cli.json`<br>
-###### solution
-`mv _angular-cli.json angular-cli.json` and run again
 
 ## Bonus
 Check out this package, [keycloak-angular](https://www.npmjs.com/package/keycloak-angular), which provides Easy Keycloak setup for Angular applications.
