@@ -13,6 +13,9 @@ import {HttpClientModule} from '@angular/common/http';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './InMemoryDataService';
 import {HeroSearchComponent} from './hero-search/hero-search.component';
+import {KeycloakHttp, keycloakHttpFactory} from './keycloak/keycloak.http';
+import {RequestOptions, XHRBackend} from '@angular/http';
+import {KeycloakService} from './keycloak/keycloak.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,13 @@ import {HeroSearchComponent} from './hero-search/hero-search.component';
       InMemoryDataService, {dataEncapsulation: false}
     )
   ],
-  providers: [],
+  providers: [
+    {
+      provide: KeycloakHttp,
+      useFactory: keycloakHttpFactory,
+      deps: [XHRBackend, RequestOptions, KeycloakService]
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
