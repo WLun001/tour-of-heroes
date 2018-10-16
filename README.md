@@ -1,27 +1,36 @@
 # AngularTourOfHeroes
+Simple Angular application uses [Keycloak](https://www.keycloak.org/index.html) for authentication
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
+## Get started
+This sample project is following the guide from the [tutorial series](https://symbiotics.co.za/integrating-keycloak-with-an-angular-4-web-application-part-5/) and refactor with Angular 6, please read all the parts (five in total)
 
-## Development server
+### Original Repository
+[original repository](https://drive.google.com/open?id=0B4H8V7DA5DrJckd5WjNRVHlIZWM)
+##### Posssible error from running [original repository](https://drive.google.com/open?id=0B4H8V7DA5DrJckd5WjNRVHlIZWM)
+```
+Cannot read property 'config' of null
+TypeError: Cannot read property 'config' of null
+```
+it is caused by Angular cli couldn't find `angular.cli.json`<br>
+###### Solution
+`mv _angular-cli.json angular-cli.json` and run again
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Current Repository 
 
-## Code scaffolding
+##### Run
+1. start Keycloak server, go to where the Keycloak is saved `/bin/standalone.sh`, more info from [Keycloak guide](https://www.keycloak.org/docs/latest/getting_started/index.html)
+2. Add new Realm and users, more info on [part two](https://symbiotics.co.za/integrating-keycloak-with-an-angular-4-web-application-part-2/)
+3. `npm install` and `npm run`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+##### Required dependencies
+`npm install` will install the required dependencies. If want to do it manually, run the command below. <br>
+`npm install keycloak-js@latest --save` <br>
+Note that the keycloak-js module comes with typed defination, it can directly use in Typescript project.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Bonus
+Check out this package, [keycloak-angular](https://www.npmjs.com/package/keycloak-angular), which provides Easy Keycloak setup for Angular applications.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Related resources
+- [Medium - On-demand login with Keycloak, Angular 4/5, NgRx, Backend API, Bookmark-able links](https://medium.com/@SumanthShankar/on-demand-login-with-keycloak-angular-4-5-ngrx-backend-api-bookmark-able-links-ecb065dc7993)
+- [Medium - Connecting Keycloak to Angular](https://medium.com/@blained3/connecting-keycloak-to-angular-d175c92a0dd3)
